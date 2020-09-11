@@ -8,12 +8,11 @@ mongoose.connect("mongodb+srv://ashish0019:ashish0019@testcluster-em8sl.mongodb.
 
 var template = {
   _id: mongoose.Schema.Types.ObjectId,
-  useriId: String,
-  userName: String,
-  userEmail: {
-    type: String,
-    required: true
-  },
+  floor: Number,
+  nonAllocatable: Array,
+  selectedSeat: Object,
+  userDetails: Object,
+  userId: String,
   created: {
     type: Date,
     default: Date.now()
@@ -29,22 +28,9 @@ var demoUser = new User({
   useriId: "X2",
   userName: "demo",
   userEmail: "demo@123.com"
-});
 
-User.findOne({useriId: demoUser.useriId}, function (err, docs) {
-  if (err) throw err;
-  else {
-    if (docs) {
-      if (docs.useriId !== demoUser.useriId) {
-        demoUser.save(function (err) {
-          if (err) throw err;
-          else {
-            console.log("user " + demoUser.userName + " save")
-          }
-        });
-      }
-      else console.log("user exist in db")
-    }
-  }
+
+
 
 });
+

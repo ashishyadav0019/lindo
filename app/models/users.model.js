@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var template = {
   _id: mongoose.Schema.Types.ObjectId,
-  userEmail: String,
-  userName: String,
-  useriId: {
-    type: String,
-    required: true
-  },
+  floor: Number,
+  nonAllocatable: Array,
+  selectedSeat: Object,
+  userDetails: Object,
+  userId: String,
   created: {
     type: Date,
     default: Date.now()

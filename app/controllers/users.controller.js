@@ -9,10 +9,12 @@ exports.create = function (req, res) {
 
   var buddy = new User({
     _id: new mongoose.Types.ObjectId(),
-    userEmail: req.body.userEmail,
-    userName: req.body.userName,
-    useriId: req.body.useriId,
-    created: req.body.created
+    created: req.body.created,
+    floor: req.body.floor,
+    nonAllocatable: req.body.nonAllocatable,
+    selectedSeat: req.body.selectedSeat,
+    userDetails: req.body.userDetails,
+    userId: req.body.userId,
   });
 
   User.findOne({useriId: req.body.useriId}, function (err, docs) {
